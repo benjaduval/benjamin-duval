@@ -1,37 +1,35 @@
 import { describe, it, expect } from 'vitest'
-import { profile, featuredCompanies, otherExperiences, stats } from './content.js'
+import { site, hero, services, caseStudies, socialProof } from './content.js'
 
-describe('portfolio content', () => {
-  it('exports required profile fields', () => {
-    expect(profile.name).toBe('Benjamin Duval')
-    expect(profile.email).toContain('@')
-    expect(profile.portrait).toMatch(/^\/assets\//)
+describe('freelance site content', () => {
+  it('has calendly and contact info', () => {
+    expect(site.email).toContain('@')
+    expect(site.calendlyUrl).toContain('calendly')
   })
 
-  it('has five featured company sections', () => {
-    expect(featuredCompanies).toHaveLength(5)
-    const ids = featuredCompanies.map((c) => c.id)
-    expect(ids).toContain('monetum')
-    expect(ids).toContain('flowo')
-    expect(ids).toContain('upbots')
-    expect(ids).toContain('superbots')
-    expect(ids).toContain('cortex')
+  it('has client-first hero copy', () => {
+    expect(hero.title).toContain('vision')
+    expect(hero.ctaPrimary).toBeTruthy()
   })
 
-  it('uses video buttons not autoplay for demos', () => {
-    const flowo = featuredCompanies.find((c) => c.id === 'flowo')
-    const upbots = featuredCompanies.find((c) => c.id === 'upbots')
-    expect(flowo.video).toContain('youtube')
-    expect(upbots.video).toContain('youtube')
-    expect(flowo.videoLabel).toBeTruthy()
+  it('has three service offerings', () => {
+    expect(services).toHaveLength(3)
+    services.forEach((s) => {
+      expect(s.audience).toBeTruthy()
+      expect(s.impact).toBeTruthy()
+    })
   })
 
-  it('has stacked experience cards', () => {
-    expect(otherExperiences.length).toBeGreaterThanOrEqual(4)
-    expect(otherExperiences.find((e) => e.id === 'contrast')).toBeTruthy()
+  it('has case studies with problem/solution format', () => {
+    expect(caseStudies.length).toBeGreaterThanOrEqual(3)
+    caseStudies.forEach((c) => {
+      expect(c.challenge).toBeTruthy()
+      expect(c.intervention).toBeTruthy()
+      expect(c.result).toBeTruthy()
+    })
   })
 
-  it('has impact stats', () => {
-    expect(stats).toHaveLength(4)
+  it('has social proof stats', () => {
+    expect(socialProof).toHaveLength(4)
   })
 })

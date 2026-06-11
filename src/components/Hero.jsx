@@ -1,97 +1,69 @@
 import { motion } from 'framer-motion'
-import { ArrowDownRight, MapPin } from 'lucide-react'
-import { profile, stats } from '../data/content'
-import { Button } from './ui/button'
-import { Badge } from './ui/badge'
-import { AnimatedGradientText } from './ui/animated-gradient-text'
-import AnimatedCounter from './AnimatedCounter'
+import { ArrowDown } from 'lucide-react'
+import { hero, site } from '../data/content'
+import { Glow } from './ui/glow'
 
 export default function Hero() {
-  const scrollTo = (href) => {
-    const el = document.querySelector(href)
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 88
-      window.scrollTo({ top, behavior: 'smooth' })
-    }
+  const scrollToResults = () => {
+    document.querySelector('#results')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
-    <section id="hero" className="relative min-h-screen overflow-hidden pt-28 pb-20 md:pt-32">
-      <div className="section-shell relative grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
+    <section id="hero" className="relative min-h-screen overflow-hidden pt-32 pb-20">
+      <Glow />
+      <div className="absolute inset-0 bg-[size:64px_64px] bg-grid-dark opacity-40" />
+
+      <div className="section-shell relative text-center">
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6 }}
+          className="section-label mb-8"
         >
-          <Badge className="mb-6">Full-Stack Product Leader · Brussels</Badge>
+          {hero.eyebrow}
+        </motion.p>
 
-          <h1 className="font-display text-[clamp(2.8rem,6vw,5.5rem)] leading-[0.95] text-ink">
-            I build, develop,
-            <br />
-            and <AnimatedGradientText>ship products.</AnimatedGradientText>
-          </h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mx-auto max-w-4xl font-display text-[clamp(2.2rem,5.5vw,4.5rem)] leading-[1.05] tracking-tight text-white"
+        >
+          {hero.title}
+        </motion.h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft md:text-xl">
-            {profile.description}
-          </p>
+        <motion.p
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-lg"
+        >
+          {hero.subtitle}
+        </motion.p>
 
-          <div className="mt-4 flex items-center gap-2 text-sm text-ink-muted">
-            <MapPin className="h-4 w-4 text-brand-accent" />
-            {profile.location}
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button onClick={() => scrollTo('#work')}>
-              Explore ventures
-              <ArrowDownRight className="h-4 w-4" />
-            </Button>
-            <Button variant="outline" onClick={() => scrollTo('#contact')}>
-              Get in touch
-            </Button>
-          </div>
-
-          <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="surface-card p-4 md:p-5">
-                <div className="font-display text-2xl text-ink md:text-3xl">
-                  <AnimatedCounter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
-                </div>
-                <div className="mt-1 text-[10px] uppercase tracking-[0.16em] text-ink-muted">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.35 }}
+          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+        >
+          <a href={site.calendlyUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
+            {hero.ctaPrimary}
+          </a>
+          <button onClick={scrollToResults} className="btn-outline">
+            {hero.ctaSecondary}
+          </button>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto w-full max-w-lg lg:max-w-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="mt-20 flex justify-center"
         >
-          <div className="absolute -left-6 top-8 h-28 w-28 rounded-full bg-gradient-to-br from-brand-accent/30 to-brand-light/20 blur-3xl" />
-          <div className="absolute -right-4 bottom-8 h-36 w-36 rounded-full bg-gradient-to-br from-violet-200/40 to-brand-accent/20 blur-3xl" />
-
-          <div className="surface-card relative overflow-hidden p-3 shadow-float">
-            <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-brand-accent/70 to-transparent" />
-            <img
-              src={profile.portrait}
-              alt={profile.name}
-              className="aspect-[4/5] w-full rounded-[1.4rem] object-cover object-top"
-            />
-            <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/40 bg-white/85 p-4 backdrop-blur-md">
-              <p className="font-display text-2xl text-ink">{profile.name}</p>
-              <p className="text-sm text-ink-soft">{profile.title}</p>
-            </div>
-          </div>
-
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -right-2 top-10 hidden rounded-2xl border border-black/[0.06] bg-white/90 px-4 py-3 shadow-card backdrop-blur md:block"
-          >
-            <p className="text-[10px] uppercase tracking-[0.2em] text-ink-muted">Currently</p>
-            <p className="font-medium text-ink">COO @ Monetum</p>
-          </motion.div>
+          <button onClick={scrollToResults} className="animate-bounce text-zinc-600 transition hover:text-brand-accent" aria-label="Scroll">
+            <ArrowDown className="h-5 w-5" />
+          </button>
         </motion.div>
       </div>
     </section>
