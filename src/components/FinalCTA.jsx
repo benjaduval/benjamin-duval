@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
-import { finalCta, site } from '../data/content'
+import { finalCta, site, labels } from '../data/content'
 import { Glow } from './ui/glow'
 
 export default function FinalCTA() {
   return (
-    <section id="contact" className="relative overflow-hidden py-24 md:py-32">
+    <section id="contact" className="section-surface relative overflow-hidden py-24 md:py-32">
       <Glow />
       <div className="section-shell relative">
         <motion.div
@@ -31,7 +31,7 @@ export default function FinalCTA() {
             </a>
 
             <p className="mt-6 text-sm text-zinc-600">
-              Ou écrivez-moi directement :{' '}
+              {labels.orEmail}{' '}
               <a href={`mailto:${site.email}`} className="text-brand-accent hover:underline">
                 {site.email}
               </a>

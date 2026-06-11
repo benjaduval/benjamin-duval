@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { site, hero, services, caseStudies, socialProof, otherExperiences, education, achievements } from './content.js'
+import { site, hero, services, caseStudies, socialProof, otherExperiences, education, achievements, labels } from './content.js'
 
 describe('freelance site content', () => {
   it('has calendly and contact info', () => {
@@ -7,32 +7,39 @@ describe('freelance site content', () => {
     expect(site.calendlyUrl).toContain('calendly')
   })
 
-  it('has client-first hero copy', () => {
-    expect(hero.title).toContain('vision')
+  it('has English hero copy and background', () => {
+    expect(hero.title.toLowerCase()).toContain('vision')
+    expect(hero.background).toContain('/assets/hero/')
   })
 
   it('has three service offerings', () => {
     expect(services).toHaveLength(3)
   })
 
-  it('has case studies including Cortex', () => {
+  it('has case studies with product focus and URLs', () => {
     expect(caseStudies.length).toBeGreaterThanOrEqual(4)
-    expect(caseStudies.find((c) => c.id === 'cortex')).toBeTruthy()
+    const flowo = caseStudies.find((c) => c.id === 'flowo')
+    expect(flowo?.url).toContain('getflowo')
+    expect(flowo?.gallery?.length).toBeGreaterThanOrEqual(3)
+    expect(flowo?.product).toBeTruthy()
+    expect(caseStudies.find((c) => c.id === 'cortex')?.url).toContain('cortex-machina')
   })
 
-  it('has stacked venture cards for other companies', () => {
+  it('has stacked venture cards with local 4C image', () => {
     expect(otherExperiences.length).toBeGreaterThanOrEqual(5)
-    const ids = otherExperiences.map((e) => e.id)
-    expect(ids).toContain('contrast')
-    expect(ids).toContain('4c-trading')
-    expect(ids).toContain('myadiction')
-    expect(ids).toContain('proximus')
-    expect(ids).toContain('kinepolis')
+    const fourC = otherExperiences.find((e) => e.id === '4c-trading')
+    expect(fourC?.image).toContain('/assets/projects/4c-trading-cover.jpg')
+    expect(fourC?.url).toContain('4c-trading')
   })
 
   it('has education and achievements sections', () => {
     expect(education.length).toBeGreaterThanOrEqual(5)
     expect(achievements.length).toBeGreaterThanOrEqual(6)
+  })
+
+  it('has English UI labels', () => {
+    expect(labels.watchDemo).toBe('Watch the demo')
+    expect(labels.product).toBe('The product')
   })
 
   it('has social proof stats', () => {

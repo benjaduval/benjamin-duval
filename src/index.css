@@ -80,4 +80,16 @@
   .glow-hero {
     background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(196, 169, 98, 0.15), transparent);
   }
+
+  .section-band {
+    @apply border-y border-white/[0.06] bg-zinc-950/70;
+  }
+
+  .section-surface {
+    @apply bg-zinc-900/30;
+  }
+
+  .section-elevated {
+    @apply border-y border-white/[0.04] bg-zinc-900/45;
+  }
 }

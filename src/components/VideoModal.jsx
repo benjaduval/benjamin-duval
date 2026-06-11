@@ -54,7 +54,24 @@ export function VideoModal({ open, onClose, videoUrl, title }) {
   )
 }
 
-export function VideoTrigger({ label, onClick }) {
+export function VideoTrigger({ label, onClick, prominent = false }) {
+  if (prominent) {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        className="btn-primary flex w-full items-center justify-center gap-3 py-4 text-sm md:text-base"
+      >
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-950/20">
+          <svg viewBox="0 0 24 24" className="ml-0.5 h-4 w-4 fill-zinc-950">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </span>
+        {label}
+      </button>
+    )
+  }
+
   return (
     <Button
       variant="outline"

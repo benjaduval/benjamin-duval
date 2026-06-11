@@ -4,7 +4,7 @@ import AnimatedCounter from './AnimatedCounter'
 
 export default function SocialProof() {
   return (
-    <section className="border-y border-white/[0.06] bg-zinc-950/50 py-10">
+    <section className="section-band border-y border-white/[0.06] py-10">
       <div className="section-shell">
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
           {socialProof.map((stat, i) => (

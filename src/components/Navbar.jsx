@@ -6,10 +6,10 @@ import { site } from '../data/content'
 
 const links = [
   { label: 'Services', href: '#services' },
-  { label: 'Résultats', href: '#results' },
-  { label: 'Missions', href: '#ventures' },
-  { label: 'Formation', href: '#credentials' },
-  { label: 'À propos', href: '#about' },
+  { label: 'Results', href: '#results' },
+  { label: 'Ventures', href: '#ventures' },
+  { label: 'Credentials', href: '#credentials' },
+  { label: 'About', href: '#about' },
 ]
 
 export default function Navbar() {
@@ -35,7 +35,7 @@ export default function Navbar() {
             'flex items-center justify-between rounded-full border px-5 py-3 transition-all duration-500',
             scrolled
               ? 'border-white/10 bg-zinc-950/80 shadow-lg backdrop-blur-xl'
-              : 'border-transparent bg-transparent'
+              : 'border-transparent bg-zinc-950/30 backdrop-blur-md'
           )}
         >
           <button onClick={() => scrollTo('#hero')} className="font-display text-lg text-white">
@@ -49,7 +49,7 @@ export default function Navbar() {
               </button>
             ))}
             <a href={site.calendlyUrl} target="_blank" rel="noopener noreferrer" className="btn-primary !py-2.5 !px-5 !text-xs">
-              Appel stratégique
+              Strategy call
             </a>
           </div>
 
@@ -73,7 +73,7 @@ export default function Navbar() {
               </button>
             ))}
             <a href={site.calendlyUrl} target="_blank" rel="noopener noreferrer" className="btn-primary mt-3 block w-full text-center">
-              Appel stratégique
+              Strategy call
             </a>
           </motion.div>
         )}

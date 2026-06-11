@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion'
 import { Layers, Sparkles, Blocks } from 'lucide-react'
-import { services } from '../data/content'
+import { services, labels } from '../data/content'
 
 const icons = { layers: Layers, sparkles: Sparkles, blocks: Blocks }
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 md:py-32">
+    <section id="services" className="section-band py-24 md:py-32">
       <div className="section-shell">
         <div className="max-w-2xl">
-          <p className="section-label">Comment je vous aide</p>
-          <h2 className="section-title mt-4">Trois leviers d'exécution. Un seul objectif : livrer.</h2>
+          <p className="section-label">{labels.servicesLabel}</p>
+          <h2 className="section-title mt-4">{labels.servicesTitle}</h2>
         </div>
 
         <div className="mt-14 grid gap-5 md:grid-cols-3">
@@ -38,7 +38,7 @@ export default function Services() {
                   <h3 className="font-display text-xl text-white md:text-2xl">{service.title}</h3>
 
                   <p className="mt-4 text-sm leading-relaxed text-zinc-500">
-                    <span className="font-medium text-zinc-400">Pour qui : </span>
+                    <span className="font-medium text-zinc-400">{labels.forWhom} </span>
                     {service.audience}
                   </p>
 
@@ -49,7 +49,6 @@ export default function Services() {
                   </div>
                 </div>
 
-                {/* Magic UI corner accents on hover */}
                 <div className="pointer-events-none absolute inset-0 hidden opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block">
                   <div className="absolute -left-px -top-px h-3 w-3 bg-brand-accent" />
                   <div className="absolute -right-px -top-px h-3 w-3 bg-brand-accent" />

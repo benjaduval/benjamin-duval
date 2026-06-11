@@ -1,7 +1,7 @@
-/** Site copy & data — freelance positioning: "Le C-Level de l'Exécution Technique" */
+/** Site copy & data — freelance positioning: Technical Execution Partner */
 
 export const site = {
-  calendlyUrl: 'https://calendly.com/benjaduval/30min', // ← remplace par ton vrai lien Calendly
+  calendlyUrl: 'https://calendly.com/benjaduval/30min',
   email: 'benjaduval@hotmail.com',
   linkedin: 'https://www.linkedin.com/in/benjaminduval/',
   location: 'Brussels, Belgium',
@@ -13,27 +13,28 @@ export const profile = {
 }
 
 export const hero = {
-  eyebrow: 'Pour les startups, scale-ups et fondateurs ambitieux',
-  title: 'Vous avez la vision. Je construis et scale votre produit technologique.',
+  eyebrow: 'For ambitious startups, scale-ups & founders',
+  title: 'You have the vision. I build and scale your technology product.',
   subtitle:
-    "Ne laissez pas la complexité technique ralentir votre croissance. En combinant une vision stratégique de C-Level et une exécution technique de pointe (IA & Web3), je transforme vos idées complexes en produits rentables, prêts pour le marché.",
-  ctaPrimary: 'Discutons de votre croissance',
-  ctaSecondary: 'Voir mes résultats d\'exécution ↓',
+    "Don't let technical complexity slow your growth. Combining C-Level strategic vision with cutting-edge execution (AI & Web3), I turn complex ideas into profitable, market-ready products.",
+  ctaPrimary: "Let's talk growth",
+  ctaSecondary: 'See execution results ↓',
+  background: '/assets/hero/benjamin-speaking.png',
 }
 
 export const socialProof = [
-  { value: 12, prefix: '+', suffix: 'M$', label: 'Levés (ICO, IEO, VC)' },
-  { value: 150, prefix: '+', suffix: 'M$', label: "D'actifs gérés au plus haut" },
-  { value: 8, suffix: '+', label: 'Applications IA déployées en production' },
-  { value: 12, suffix: ' ans', label: "D'expertise en scaling tech & produit" },
+  { value: 12, prefix: '+', suffix: 'M$', label: 'Capital raised (ICO, IEO, VC)' },
+  { value: 150, prefix: '+', suffix: 'M$', label: 'Assets under management at peak' },
+  { value: 8, suffix: '+', label: 'AI applications deployed in production' },
+  { value: 12, suffix: ' yrs', label: 'Tech & product scaling experience' },
 ]
 
 export const empathy = {
-  title: "Développer un produit innovant en 2026 ne devrait pas être un gouffre financier ni un marathon sans fin.",
+  title: 'Building an innovative product in 2026 should not be a financial black hole or an endless marathon.',
   paragraphs: [
-    "Vous savez que l'IA ou la blockchain peut transformer votre entreprise. Mais entre le recrutement des bons talents, les choix d'architecture, le respect des réglementations et la pression du Go-To-Market, l'exécution devient chaotique.",
-    "En tant qu'ancien CEO et COO ayant fondé et revendu plusieurs entreprises — de la FinTech au SaaS — j'ai affronté ces murs. J'ai vu des millions dépensés dans des roadmaps interminables.",
-    "Aujourd'hui, j'interviens comme votre partenaire d'exécution : je coupe le bruit, je structure votre stratégie, et je livre le produit. Vite.",
+    'You know AI or blockchain can transform your business. But between hiring the right talent, architecture choices, regulatory compliance, and Go-To-Market pressure, execution becomes chaotic.',
+    'As a former CEO and COO who founded and exited multiple companies — from FinTech to SaaS — I have hit those walls. I have seen millions spent on endless roadmaps.',
+    'Today, I step in as your execution partner: I cut the noise, structure your strategy, and ship the product. Fast.',
   ],
 }
 
@@ -42,29 +43,29 @@ export const services = [
     id: 'cpo',
     number: '01',
     title: 'Fractional CPO & Product Leadership',
-    audience: 'Les entreprises qui ont besoin d\'un leadership produit expérimenté sans embaucher un C-Level à temps plein.',
-    impact: 'De la conception du MVP à la plateforme à grande échelle. Gestion des équipes, roadmaps, UX/UI, et alignement avec vos objectifs de P&L.',
-    metric: 'Time-to-Market réduit grâce à une exécution structurée dès le jour 1.',
+    audience: 'Companies that need experienced product leadership without hiring a full-time C-Level executive.',
+    impact: 'From MVP design to large-scale platform. Team management, roadmaps, UX/UI, and alignment with your P&L goals.',
+    metric: 'Reduced time-to-market through structured execution from day one.',
     icon: 'layers',
     gradient: 'from-violet-500/20 via-violet-500/5 to-transparent',
   },
   {
     id: 'ai',
     number: '02',
-    title: 'Intégration IA & Automatisation Sur-Mesure',
-    audience: 'Les sociétés cherchant à drastiquement réduire leurs coûts ou créer de nouveaux SaaS basés sur l\'IA.',
-    impact: 'Création d\'orchestrations IA complexes, développement rapide d\'applications (Claude, OpenAI, Gemini, Cursor) pour automatiser vos opérations ou créer votre prochain produit.',
-    metric: 'Prototype fonctionnel livré en quelques semaines, pas en mois.',
+    title: 'Custom AI Integration & Automation',
+    audience: 'Businesses looking to drastically cut costs or build new AI-powered SaaS products.',
+    impact: 'Complex AI orchestration, rapid application development (Claude, OpenAI, Gemini, Cursor) to automate operations or launch your next product.',
+    metric: 'Working prototype delivered in weeks, not months.',
     icon: 'sparkles',
     gradient: 'from-amber-500/20 via-amber-500/5 to-transparent',
   },
   {
     id: 'web3',
     number: '03',
-    title: 'Web3, DeFi & Infrastructure Crypto',
-    audience: 'Les institutions financières traditionnelles et les projets Web3 cherchant à créer des ponts fiables et conformes.',
-    impact: 'Architecture de smart contracts, intégration de protocoles (0x, Alchemy), création de tokenomics durables et stratégies de market making.',
-    metric: '+20 protocoles DeFi intégrés · infrastructures auditées gérant des millions.',
+    title: 'Web3, DeFi & Crypto Infrastructure',
+    audience: 'Traditional financial institutions and Web3 projects building reliable, compliant bridges.',
+    impact: 'Smart contract architecture, protocol integration (0x, Alchemy), sustainable tokenomics, and market-making strategies.',
+    metric: '20+ DeFi protocols integrated · audited infrastructures managing millions.',
     icon: 'blocks',
     gradient: 'from-cyan-500/20 via-cyan-500/5 to-transparent',
   },
@@ -75,81 +76,112 @@ export const caseStudies = [
     id: 'flowo',
     company: 'Flowo',
     logo: '/assets/logos/flowo.png',
-    image: '/assets/projects/flowo-preview.png',
+    logoInvert: true,
+    url: 'https://getflowo.com',
+    image: '/assets/projects/flowo/hero-flowo-dashboard-v5.webp',
+    gallery: [
+      { src: '/assets/projects/flowo/hero-flowo-dashboard-v5.webp', alt: 'Flowo dashboard' },
+      { src: '/assets/projects/flowo/ai-chat-mockup.webp', alt: 'Flowo AI assistant' },
+      { src: '/assets/projects/flowo/one-click-week-calendar-v2.webp', alt: 'One-click week planning' },
+      { src: '/assets/projects/flowo/tour-step-tasks.png', alt: 'Task management' },
+      { src: '/assets/projects/flowo/tour-step-ai.png', alt: 'AI scheduling' },
+    ],
     video: 'https://www.youtube.com/embed/RYvWHKIFIng',
-    tag: 'IA · SaaS · Vitesse d\'exécution',
-    challenge:
-      'Lancer un SaaS de productivité neuroscientifique complexe dans un marché saturé, avec un budget proche de zéro.',
-    intervention:
-      'Architecture complète, configuration des agents IA, et développement full-stack automatisé en utilisant uniquement des outils IA de pointe.',
-    result:
-      'Lancement de l\'application de zéro au marché en 3 semaines. Acquisition de +450 utilisateurs en 14 jours avec un budget total de 800€.',
-    stat: '+450 utilisateurs en 14 jours · budget total 800€',
+    tag: 'AI · SaaS · Productivity',
+    product:
+      'Flowo is an AI-native productivity platform: unified calendar, tasks, notes, and an AI copilot that plans your week, reschedules on the fly, and adapts to ADHD-friendly workflows. Built A-to-Z — product vision, UX, AI orchestration, billing, and go-to-market.',
+    contribution:
+      'End-to-end product architecture, AI agent configuration, full-stack development with cutting-edge AI tooling, landing pages, onboarding, and launch strategy.',
+    outcome:
+      'Zero-to-market in 3 weeks. 450+ users acquired in 14 days on an €800 total marketing budget.',
+    stat: '450+ users in 14 days · €800 total launch budget',
     accent: '#a78bfa',
   },
   {
     id: 'monetum',
     company: 'Monetum',
-    logo: null,
-    wordmark: 'Monetum',
-    image: '/assets/projects/monetum.png',
+    logo: '/assets/projects/monetum.png',
+    logoInvert: true,
+    url: 'https://monetum.com',
+    image: '/assets/projects/monetum-dashboard.jpg',
+    gallery: [
+      { src: '/assets/projects/monetum-dashboard.jpg', alt: 'Monetum unified dashboard' },
+    ],
     tag: 'Crypto-banking · TradFi × Web3',
-    challenge:
-      'Transformer une solution d\'open-banking traditionnelle en une plateforme crypto-bancaire de nouvelle génération.',
-    intervention:
-      'Refonte de la stratégie produit DeFi institutionnelle, management des équipes cross-fonctionnelles et sécurisation de la conformité réglementaire (COO).',
-    result:
-      'Repositionnement réussi de la marque et création d\'une infrastructure hybride robuste pour clients institutionnels.',
-    stat: 'Transformation complète open-banking → crypto-banking',
+    product:
+      'Monetum is a regulated European financial platform combining business IBAN accounts, SEPA payments, open banking APIs, and integrated crypto wallets — one dashboard for fiat and digital assets.',
+    contribution:
+      'As COO, I led the product pivot from open-banking to crypto-banking: DeFi institutional strategy, cross-functional team management, regulatory compliance, and hybrid infrastructure design.',
+    outcome:
+      'Successful brand repositioning and a robust hybrid infrastructure serving institutional clients across TradFi and Web3.',
+    stat: 'Full open-banking → crypto-banking transformation',
     accent: '#6366f1',
   },
   {
     id: 'upbots-superbots',
     company: 'UpBots & SuperBots',
-    logos: ['/assets/logos/upbots.png', '/assets/logos/superbots.png'],
+    logos: [
+      { src: '/assets/logos/upbots.png', invert: true },
+      { src: '/assets/logos/superbots.png', invert: true },
+    ],
+    url: 'https://upbots.io',
+    urls: [
+      { label: 'UpBots', href: 'https://upbots.io' },
+      { label: 'SuperBots', href: 'https://www.superbots.finance' },
+    ],
     image: '/assets/projects/superbots-dashboard.png',
+    gallery: [
+      { src: '/assets/projects/superbots-dashboard.png', alt: 'SuperBots vault dashboard' },
+      { src: '/assets/projects/upbots-app.png', alt: 'UpBots trading platform' },
+    ],
     video: 'https://www.youtube.com/embed/kaDk4vdRS-M',
     tag: 'DeFi · Trading · Fundraising',
-    challenge:
-      'Créer de toutes pièces des plateformes de trading algorithmique grand public et DeFi, et attirer les liquidités.',
-    intervention:
-      'Création des tokenomics, design de l\'écosystème, levée de fonds (ICO/IEO/Ventes privées) et développement des partenariats (FTX, KuCoin).',
-    result:
-      'Plus de 8M$ levés, une valorisation atteignant 50M$ de Market Cap, et plus de 20M$ sous gestion avec des audits de sécurité validés.',
-    stat: '$8M+ levés · $50M market cap · $20M+ sous gestion',
+    product:
+      'UpBots is a multi-exchange crypto trading hub with automated bots and portfolio tools. SuperBots extends this into DeFi with on-chain vaults, staking, and audited smart contracts on BSC — a full trading ecosystem from CeFi to DeFi.',
+    contribution:
+      'Co-founded both platforms. Tokenomics design, ecosystem architecture, fundraising (ICO/IEO/private sales), exchange listings, and strategic partnerships (FTX, KuCoin).',
+    outcome:
+      '$8M+ raised, $50M peak market cap, $20M+ assets under management, with security audits validated.',
+    stat: '$8M+ raised · $50M market cap · $20M+ AUM',
     accent: '#2dd4bf',
   },
   {
     id: 'cortex',
     company: 'Cortex Machina',
     logo: '/assets/logos/cortex-machina.png',
-    image: '/assets/projects/cortex-team.png',
-    tag: 'IA · Healthcare · Fundraising',
-    challenge:
-      'Lancer une startup healthcare IA dans un secteur ultra-réglementé, avec des cycles de vente longs et des exigences GDPR/HIPAA strictes.',
-    intervention:
-      'Co-fondation, stratégie produit & go-to-market, partenariats hospitaliers, levée de fonds initiale et conformité réglementaire (CMO & Co-Founder).',
-    result:
-      'Partenariats sécurisés avec 3 hôpitaux majeurs, organisation de la levée initiale de €1M, et mise en place complète GDPR/HIPAA.',
-    stat: '3 hôpitaux partenaires · €1M levés · Conformité validée',
+    logoInvert: true,
+    url: 'https://www.cortex-machina.com',
+    image: '/assets/projects/cortex-dashboard.jpg',
+    gallery: [
+      { src: '/assets/projects/cortex-dashboard.jpg', alt: 'Cortex Machina platform' },
+      { src: '/assets/projects/cortex-team.png', alt: 'Cortex Machina team' },
+    ],
+    tag: 'AI · Healthcare · BCI',
+    product:
+      'Cortex Machina builds plug-and-play brain-computer interface (BCI) systems: dry-electrode EEG hardware (Vortex headset), Cortex Machina PRO software with real-time AI neural pattern detection, and a developer API for custom medical and research applications.',
+    contribution:
+      'Co-founded as CMO & Co-Founder. Product & go-to-market strategy, hospital partnerships, initial €1M fundraising, and full GDPR/HIPAA compliance framework.',
+    outcome:
+      'Partnerships secured with 3 major hospitals, €1M initial raise organized, and full regulatory compliance validated.',
+    stat: '3 hospital partners · €1M raised · Compliance validated',
     accent: '#fb7185',
   },
 ]
 
 export const about = {
-  title: 'Benjamin Duval — Bâtisseur, avant tout.',
+  title: 'Benjamin Duval — Builder first.',
   paragraphs: [
-    "Je ne suis pas né consultant. Pendant plus de 12 ans, j'ai été à votre place.",
-    "Basé en Belgique, j'ai fondé, financé et fait évoluer des entreprises technologiques en partant d'une feuille blanche pour atteindre des valorisations à plusieurs dizaines de millions de dollars.",
-    "J'ai appris à la dure ce qui fonctionne et ce qui échoue. J'ai compris que la plus belle ligne de code ne vaut rien si elle ne sert pas un objectif d'acquisition, de rétention ou de rentabilité.",
-    "Aujourd'hui, j'utilise la puissance inégalée de l'IA et mon expérience du management de crise et du Web3 pour offrir ce que j'aurais aimé avoir en tant que CEO : un partenaire technique capable de comprendre instantanément mon business model et de l'exécuter à la perfection.",
+    'I was not born a consultant. For over 12 years, I have been in your shoes.',
+    'Based in Belgium, I have founded, funded, and scaled technology companies from a blank page to valuations in the tens of millions of dollars.',
+    'I learned the hard way what works and what fails. I understood that the most elegant line of code is worthless if it does not serve acquisition, retention, or profitability.',
+    'Today, I leverage the unmatched power of AI and my crisis management and Web3 experience to offer what I wished I had as CEO: a technical partner who instantly understands my business model and executes it flawlessly.',
   ],
 }
 
 export const finalCta = {
-  title: 'Prêt à transformer votre roadmap en produit live ?',
-  text: "Arrêtons de parler théorie. Réservez un appel stratégique de 30 minutes avec moi. Nous analyserons votre goulot d'étranglement actuel, vos besoins en IA ou Web3, et nous établirons un plan d'action d'exécution immédiate. Sans engagement.",
-  button: 'Réserver mon appel stratégique',
+  title: 'Ready to turn your roadmap into a live product?',
+  text: "Let's stop talking theory. Book a 30-minute strategy call with me. We'll analyze your current bottleneck, your AI or Web3 needs, and define an immediate execution plan. No commitment.",
+  button: 'Book my strategy call',
 }
 
 export const techPartners = [
@@ -171,7 +203,6 @@ export const clientLogos = [
   { name: '4C-Trading', src: '/assets/logos/4c-trading.png' },
 ]
 
-/** Autres missions — cartes empilées au scroll */
 export const otherExperiences = [
   {
     id: 'contrast',
@@ -182,13 +213,13 @@ export const otherExperiences = [
     url: 'https://contrast.finance',
     logo: '/assets/logos/contrast-finance.png',
     image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&auto=format&fit=crop&q=80',
-    gradient: 'from-emerald-600/40 to-transparent',
     accent: '#34d399',
-    about: 'Plateforme fintech axée sur la clarté et des décisions financières plus intelligentes.',
+    about:
+      'I founded Contrast.Finance to bring clarity to complex financial decisions — a premium fintech platform focused on smarter money management.',
     highlights: [
-      'Identité de marque et positionnement produit from scratch',
-      'UX fintech premium et stratégie go-to-market',
-      'Architecture produit orientée conversion',
+      'Built brand identity, positioning, and product vision from scratch',
+      'Designed conversion-oriented UX and go-to-market strategy',
+      'Architected a scalable product foundation for rapid iteration',
     ],
   },
   {
@@ -197,16 +228,16 @@ export const otherExperiences = [
     role: 'Founder & CEO',
     period: '2017 – 2021',
     category: 'Crypto Trading',
-    url: null,
+    url: 'https://4c-trading.com',
     logo: '/assets/logos/4c-trading.png',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938aa0?w=1200&auto=format&fit=crop&q=80',
-    gradient: 'from-blue-600/40 to-transparent',
+    image: '/assets/projects/4c-trading-cover.jpg',
     accent: '#60a5fa',
-    about: 'Firme de trading crypto quantitative — stratégies automatisées, bootstrappée from zero.',
+    about:
+      'I founded 4C-Trading (originally Crypto-Addicts) — a quantitative crypto trading firm that became one of the first Telegram-based signal and bot services, bootstrapped with zero external capital.',
     highlights: [
-      'Premier service de trading unique sur Telegram',
-      '1 200+ utilisateurs payants · $2M de revenus annuels',
-      'Construit sans capital initial',
+      'Pioneered Telegram-native crypto trading signals and automated bots',
+      '1,200+ paying subscribers · $2M annual revenue',
+      'Merged leading signal providers (CryptoAddicts + CryptoMedics) into one platform',
     ],
   },
   {
@@ -216,16 +247,15 @@ export const otherExperiences = [
     period: '2015 – 2017',
     category: 'MarTech',
     url: null,
-    logo: null,
     wordmark: 'MyADiction',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80',
-    gradient: 'from-amber-600/40 to-transparent',
     accent: '#fbbf24',
-    about: 'Plateforme MarTech — publicité digitale, attribution et analytics e-commerce.',
+    about:
+      'I founded MyADiction — a MarTech platform for digital advertising, e-commerce attribution, and analytics — and took it from concept to national enterprise clients.',
     highlights: [
-      'Levées de fonds et crowdfunding',
-      'Développement technique de l\'application',
-      'Vente du service à des entreprises nationales',
+      'Raised funding through crowdfunding and private investors',
+      'Led full technical development of the mobile application',
+      'Sold the service to national enterprise clients before exit',
     ],
   },
   {
@@ -234,17 +264,16 @@ export const otherExperiences = [
     role: 'Young Potential Program',
     period: '2014 – 2016',
     category: 'Telecom',
-    url: 'https://proximus.be',
-    logo: null,
+    url: 'https://www.proximus.be',
     wordmark: 'Proximus',
     image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&auto=format&fit=crop&q=80',
-    gradient: 'from-purple-600/40 to-transparent',
     accent: '#a78bfa',
-    about: 'Programme Young Potential — stratégie, web marketing et RH chez le leader telecom belge.',
+    about:
+      'Within Proximus\' Young Potential Program, I contributed to digital strategy, UX optimization, and talent acquisition at Belgium\'s leading telecom operator.',
     highlights: [
-      'Impact financier & technique du télétravail (call centers)',
-      'UX/UI, A/B testing, optimisation navigation',
-      'Recrutement & programme talent acquisition',
+      'Quantified financial & operational impact of remote work for call centers',
+      'Led UX/UI improvements, A/B testing, and navigation optimization',
+      'Designed talent acquisition program for high-potential recruits',
     ],
   },
   {
@@ -253,16 +282,16 @@ export const otherExperiences = [
     role: 'Brand Manager',
     period: '2010 – 2011',
     category: 'Entertainment',
-    url: 'https://kinepolis.com',
-    logo: null,
+    url: 'https://www.kinepolis.com',
     wordmark: 'Kinepolis',
     image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200&auto=format&fit=crop&q=80',
-    gradient: 'from-red-600/40 to-transparent',
     accent: '#f87171',
-    about: 'Créer une connexion émotionnelle entre la marque et ses clients.',
+    about:
+      'As Brand Manager at Kinepolis Brussels, I strengthened the emotional connection between the brand and its audience through events, campaigns, and digital content.',
     highlights: [
-      'Organisation d\'événements à Bruxelles',
-      'Campagnes marketing, vidéos ads & promotions',
+      'Organized flagship brand events across Brussels locations',
+      'Produced video ads and promotional campaigns driving foot traffic',
+      'Increased brand engagement through integrated marketing initiatives',
     ],
   },
 ]
@@ -280,50 +309,77 @@ export const education = [
     school: 'ICHEC Brussels Management School',
     location: 'Brussels, Belgium',
     period: '2012 – 2014',
-    details: 'Spécialisation Finance (Post-Graduate)',
+    details: 'Finance specialization (Post-Graduate)',
   },
   {
     degree: 'Bachelor in Commercial Engineering',
     school: 'ICHEC Brussels Management School',
     location: 'Brussels, Belgium',
     period: '2009 – 2012',
-    details: 'Spécialisation Finance (Post-Graduate)',
+    details: 'Finance specialization (Post-Graduate)',
   },
   {
     degree: 'Erasmus — Business Administration',
     school: 'Universidad Politécnica de Valencia',
     location: 'Valencia, Spain',
     period: '2011',
-    details: 'Comptabilité, Management & Marketing',
+    details: 'Accounting, Management & Marketing',
   },
   {
     degree: 'Summer Program — Marketing',
     school: 'Clemson University',
     location: 'South Carolina, USA',
     period: '2010',
-    details: 'Marketing & Business Management (3 mois)',
+    details: 'Marketing & Business Management (3 months)',
   },
 ]
 
 export const achievements = [
-  { metric: '$12M+', label: 'Capital levé', detail: 'ICO, IEO, private sales & fundraising' },
-  { metric: '$150M', label: 'Actifs gérés', detail: 'Trading platforms & DeFi protocols' },
-  { metric: '10+', label: 'Entreprises bâties', detail: 'Fintech, Web3, AI & MarTech' },
-  { metric: '$50M', label: 'Market cap peak', detail: 'Valorisation au plus haut' },
-  { metric: '20K+', label: 'Communauté', detail: 'Membres actifs cumulés' },
-  { metric: '25+', label: 'Équipe managée', detail: '8+ pays' },
-  { metric: 'ICO/IEO', label: 'Listings réussis', detail: 'FTX, KuCoin, DEXs' },
-  { metric: '8+', label: 'Apps IA en prod', detail: 'Orchestration custom déployée' },
+  { metric: '$12M+', label: 'Capital raised', detail: 'ICO, IEO, private sales & fundraising' },
+  { metric: '$150M', label: 'Assets managed', detail: 'Trading platforms & DeFi protocols' },
+  { metric: '10+', label: 'Companies built', detail: 'Fintech, Web3, AI & MarTech' },
+  { metric: '$50M', label: 'Peak market cap', detail: 'Highest valuation achieved' },
+  { metric: '20K+', label: 'Community', detail: 'Cumulative active members' },
+  { metric: '25+', label: 'Team managed', detail: 'Across 8+ countries' },
+  { metric: 'ICO/IEO', label: 'Successful listings', detail: 'FTX, KuCoin, DEXs' },
+  { metric: '8+', label: 'AI apps in prod', detail: 'Custom orchestration deployed' },
 ]
 
 export const languages = [
-  { name: 'Français', level: 'Natif' },
-  { name: 'English', level: 'Courant' },
-  { name: 'Nederlands', level: 'Professionnel' },
-  { name: 'Español', level: 'Conversationnel' },
+  { name: 'French', level: 'Native' },
+  { name: 'English', level: 'Fluent' },
+  { name: 'Dutch', level: 'Professional' },
+  { name: 'Spanish', level: 'Conversational' },
 ]
 
+export const labels = {
+  product: 'The product',
+  contribution: 'My contribution',
+  outcome: 'The outcome',
+  watchDemo: 'Watch the demo',
+  visitSite: 'Visit website',
+  otherVentures: 'Other ventures',
+  venturesTitle: 'Every card tells another execution story.',
+  venturesSubtitle: 'Scroll — cards stack on top of each other, venture by venture.',
+  credentialsLabel: 'Education & recognition',
+  credentialsTitle: 'The academic foundation behind the execution.',
+  credentialsSubtitle: 'International business & finance training, backed by a measurable track record in tech entrepreneurship.',
+  achievementsTitle: 'Key results & recognition',
+  educationTitle: 'Degrees & education',
+  languagesTitle: 'Languages',
+  trackRecord: 'Track record',
+  resultsTitle: 'Concrete results, not promises.',
+  resultsSubtitle: 'Every engagement starts with a real business problem — and ends with a live product, metrics, and traction.',
+  servicesLabel: 'How I help',
+  servicesTitle: 'Three execution levers. One goal: ship.',
+  forWhom: 'For:',
+  aboutLabel: 'About',
+  logoStrip: 'Technologies mastered & companies supported',
+  footerTagline: 'Technical execution partner',
+  orEmail: 'Or email me directly:',
+}
+
 // Legacy for tests
-export const stats = socialProof.map((s) => ({ value: s.value, prefix: s.prefix, suffix: s.suffix?.replace(' ans', '+') || s.suffix, label: s.label }))
+export const stats = socialProof.map((s) => ({ value: s.value, prefix: s.prefix, suffix: s.suffix?.replace(' yrs', '+') || s.suffix, label: s.label }))
 export const projects = caseStudies.map((c) => ({ id: c.id, name: c.company, featured: true, video: c.video }))
 export const featuredCompanies = caseStudies

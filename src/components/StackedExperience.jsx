@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ExternalLink } from 'lucide-react'
-import { otherExperiences } from '../data/content'
+import { otherExperiences, labels } from '../data/content'
 
 function StackCard({ exp, index, total, progress }) {
   const targetScale = 1 - (total - index - 1) * 0.045
@@ -25,6 +25,7 @@ function StackCard({ exp, index, total, progress }) {
             alt={exp.company}
             className="h-full w-full object-cover"
             style={{ scale: imageScale }}
+            loading="lazy"
           />
           <div
             className="absolute inset-0 mix-blend-multiply opacity-70"
@@ -54,7 +55,7 @@ function StackCard({ exp, index, total, progress }) {
           <span className="rounded-full border border-white/10 px-2.5 py-0.5 text-[10px] uppercase tracking-wider text-zinc-500">
             {exp.category}
           </span>
-          <p className="mt-4 text-sm leading-relaxed text-zinc-400 md:text-base">{exp.about}</p>
+          <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">{exp.about}</p>
           <ul className="mt-5 space-y-2.5">
             {exp.highlights.map((h) => (
               <li key={h} className="flex gap-2.5 text-sm text-zinc-300">
@@ -68,9 +69,9 @@ function StackCard({ exp, index, total, progress }) {
               href={exp.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-accent hover:text-brand-glow"
+              className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-brand-accent/30 bg-brand-accent/10 px-4 py-2 text-sm font-medium text-brand-accent transition hover:bg-brand-accent/20 hover:text-brand-glow"
             >
-              Site web <ExternalLink className="h-3.5 w-3.5" />
+              {labels.visitSite} <ExternalLink className="h-3.5 w-3.5" />
             </a>
           )}
         </div>
@@ -87,13 +88,11 @@ export default function StackedExperience() {
   })
 
   return (
-    <section id="ventures" className="relative border-t border-white/[0.06] py-24 md:py-32">
+    <section id="ventures" className="section-elevated relative py-24 md:py-32">
       <div className="section-shell mb-14">
-        <p className="section-label">Autres missions</p>
-        <h2 className="section-title mt-4 max-w-2xl">Chaque carte raconte une autre bataille d'exécution.</h2>
-        <p className="section-subtitle mt-6">
-          Scrollez — les cartes montent et s'empilent les unes sur les autres, mission par mission.
-        </p>
+        <p className="section-label">{labels.otherVentures}</p>
+        <h2 className="section-title mt-4 max-w-2xl">{labels.venturesTitle}</h2>
+        <p className="section-subtitle mt-6">{labels.venturesSubtitle}</p>
       </div>
 
       <div

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { about, profile } from '../data/content'
+import { about, profile, labels } from '../data/content'
 
 export default function AboutSection() {
   return (
@@ -31,7 +31,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <p className="section-label">À propos</p>
+            <p className="section-label">{labels.aboutLabel}</p>
             <h2 className="section-title mt-4">{about.title}</h2>
 
             <div className="mt-8 space-y-5">

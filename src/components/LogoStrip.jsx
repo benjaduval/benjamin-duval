@@ -1,12 +1,12 @@
 import { Marquee } from './ui/marquee'
-import { clientLogos, techPartners } from '../data/content'
+import { clientLogos, techPartners, labels } from '../data/content'
 
 export default function LogoStrip() {
   return (
-    <section className="py-10">
+    <section className="section-surface py-10">
       <div className="section-shell mb-6">
         <p className="text-center text-[10px] uppercase tracking-[0.24em] text-zinc-600">
-          Technologies maîtrisées & entreprises accompagnées
+          {labels.logoStrip}
         </p>
       </div>
 

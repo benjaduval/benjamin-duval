@@ -1,24 +1,21 @@
 import { motion } from 'framer-motion'
 import { GraduationCap, Award, Languages } from 'lucide-react'
-import { education, achievements, languages } from '../data/content'
+import { education, achievements, languages, labels } from '../data/content'
 
 export default function Credentials() {
   return (
-    <section id="credentials" className="border-t border-white/[0.06] bg-zinc-950/50 py-24 md:py-32">
+    <section id="credentials" className="section-band py-24 md:py-32">
       <div className="section-shell">
         <div className="max-w-2xl">
-          <p className="section-label">Formation & reconnaissance</p>
-          <h2 className="section-title mt-4">Le socle académique derrière l'exécution.</h2>
-          <p className="section-subtitle mt-6">
-            Formation internationale en business & finance, complétée par un track record mesurable en entrepreneuriat tech.
-          </p>
+          <p className="section-label">{labels.credentialsLabel}</p>
+          <h2 className="section-title mt-4">{labels.credentialsTitle}</h2>
+          <p className="section-subtitle mt-6">{labels.credentialsSubtitle}</p>
         </div>
 
-        {/* Achievements grid */}
         <div className="mt-16">
           <div className="mb-8 flex items-center gap-3">
             <Award className="h-5 w-5 text-brand-accent" />
-            <h3 className="font-display text-2xl text-white">Récompenses & résultats clés</h3>
+            <h3 className="font-display text-2xl text-white">{labels.achievementsTitle}</h3>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {achievements.map((item, i) => (
@@ -38,11 +35,10 @@ export default function Credentials() {
           </div>
         </div>
 
-        {/* Education timeline */}
         <div className="mt-20">
           <div className="mb-8 flex items-center gap-3">
             <GraduationCap className="h-5 w-5 text-brand-accent" />
-            <h3 className="font-display text-2xl text-white">Diplômes & formation</h3>
+            <h3 className="font-display text-2xl text-white">{labels.educationTitle}</h3>
           </div>
 
           <div className="relative space-y-0">
@@ -77,11 +73,10 @@ export default function Credentials() {
           </div>
         </div>
 
-        {/* Languages */}
         <div className="mt-16">
           <div className="mb-6 flex items-center gap-3">
             <Languages className="h-5 w-5 text-brand-accent" />
-            <h3 className="font-display text-2xl text-white">Langues</h3>
+            <h3 className="font-display text-2xl text-white">{labels.languagesTitle}</h3>
           </div>
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
             {languages.map((lang, i) => (
