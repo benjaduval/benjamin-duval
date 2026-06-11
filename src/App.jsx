@@ -1,47 +1,52 @@
-import { useState, useEffect } from 'react'
-import { AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
+import Lenis from 'lenis'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import LogoMarquee from './components/LogoMarquee'
 import About from './components/About'
-import Experience from './components/Experience'
-import Portfolio from './components/Portfolio'
-import Education from './components/Education'
-import Skills from './components/Skills'
+import SelectedWork from './components/SelectedWork'
+import Impact from './components/Impact'
+import Expertise from './components/Expertise'
+import Journey from './components/Journey'
+import Credentials from './components/Credentials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import Loader from './components/Loader'
-import GridBackground from './components/GridBackground'
 
 export default function App() {
-  const [loading, setLoading] = useState(true)
-
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2200)
-    return () => clearTimeout(timer)
+    const lenis = new Lenis({
+      duration: 1.1,
+      smoothWheel: true,
+    })
+
+    let rafId
+    const raf = (time) => {
+      lenis.raf(time)
+      rafId = requestAnimationFrame(raf)
+    }
+    rafId = requestAnimationFrame(raf)
+
+    return () => {
+      cancelAnimationFrame(rafId)
+      lenis.destroy()
+    }
   }, [])
 
   return (
-    <>
-      <AnimatePresence mode="wait">
-        {loading && <Loader key="loader" />}
-      </AnimatePresence>
-
-      {!loading && (
-        <div className="relative">
-          <GridBackground />
-          <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Experience />
-            <Portfolio />
-            <Education />
-            <Skills />
-            <Contact />
-          </main>
-          <Footer />
-        </div>
-      )}
-    </>
+    <div className="relative min-h-screen">
+      <Navbar />
+      <main>
+        <Hero />
+        <LogoMarquee />
+        <About />
+        <SelectedWork />
+        <Impact />
+        <Expertise />
+        <Journey />
+        <Credentials />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   )
 }

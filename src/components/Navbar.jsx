@@ -1,164 +1,102 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
+import { cn } from '../lib/utils'
+import { Button } from './ui/button'
 
 const links = [
   { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Education', href: '#education' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Work', href: '#work' },
+  { label: 'Expertise', href: '#expertise' },
+  { label: 'Journey', href: '#journey' },
   { label: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('')
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-
-      const sections = links.map(l => l.href.slice(1))
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i])
-        if (el && el.getBoundingClientRect().top <= 120) {
-          setActiveSection(sections[i])
-          return
-        }
-      }
-      setActiveSection('')
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const handleClick = (e, href) => {
-    e.preventDefault()
-    setMobileOpen(false)
+  const scrollTo = (href) => {
+    setOpen(false)
     const el = document.querySelector(href)
     if (el) {
-      const offset = 80
-      const top = el.getBoundingClientRect().top + window.scrollY - offset
+      const top = el.getBoundingClientRect().top + window.scrollY - 88
       window.scrollTo({ top, behavior: 'smooth' })
     }
   }
 
   return (
-    <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? 'glass-strong shadow-lg shadow-black/20' : 'bg-transparent'
-        }`}
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div
+        className={cn(
+          'mx-auto mt-4 max-w-7xl px-4 transition-all duration-500 md:px-8',
+          scrolled && 'mt-2'
+        )}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault()
-                window.scrollTo({ top: 0, behavior: 'smooth' })
-              }}
-              className="text-xl font-heading font-bold gradient-text hover:opacity-80 transition-opacity"
-            >
-              BD
-            </a>
+        <nav
+          className={cn(
+            'flex items-center justify-between rounded-full border px-5 py-3 backdrop-blur-xl transition-all duration-500',
+            scrolled
+              ? 'border-black/[0.08] bg-white/85 shadow-soft'
+              : 'border-transparent bg-white/50'
+          )}
+        >
+          <button onClick={() => scrollTo('#hero')} className="font-display text-xl text-ink">
+            Benjamin <span className="text-brand-accent">Duval</span>
+          </button>
 
-            <div className="hidden md:flex items-center gap-1">
-              {links.map(({ label, href }) => (
-                <a
-                  key={href}
-                  href={href}
-                  onClick={(e) => handleClick(e, href)}
-                  className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-lg ${
-                    activeSection === href.slice(1)
-                      ? 'text-white'
-                      : 'text-muted hover:text-white'
-                  }`}
-                >
-                  {activeSection === href.slice(1) && (
-                    <motion.div
-                      layoutId="nav-active"
-                      className="absolute inset-0 bg-dark-600/50 rounded-lg"
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                  <span className="relative z-10">{label}</span>
-                </a>
-              ))}
-            </div>
-
-            <a
-              href="#contact"
-              onClick={(e) => handleClick(e, '#contact')}
-              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-gradient-accent rounded-lg hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Get in Touch
-            </a>
-
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
-              aria-label="Toggle menu"
-            >
-              <motion.span
-                animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                className="block w-6 h-[2px] bg-white rounded-full"
-              />
-              <motion.span
-                animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="block w-6 h-[2px] bg-white rounded-full"
-              />
-              <motion.span
-                animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-                className="block w-6 h-[2px] bg-white rounded-full"
-              />
-            </button>
+          <div className="hidden items-center gap-8 md:flex">
+            {links.map((link) => (
+              <button
+                key={link.href}
+                onClick={() => scrollTo(link.href)}
+                className="text-sm text-ink-soft transition-colors hover:text-ink"
+              >
+                {link.label}
+              </button>
+            ))}
+            <Button size="sm" onClick={() => scrollTo('#contact')}>
+              Let's talk
+            </Button>
           </div>
-        </div>
-      </motion.nav>
+
+          <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </nav>
+      </div>
 
       <AnimatePresence>
-        {mobileOpen && (
+        {open && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 pt-20 glass-strong md:hidden"
+            exit={{ opacity: 0, y: -8 }}
+            className="mx-4 mt-2 rounded-3xl border border-black/[0.08] bg-white/95 p-4 shadow-float backdrop-blur-xl md:hidden"
           >
-            <div className="flex flex-col items-center gap-2 p-6">
-              {links.map(({ label, href }, i) => (
-                <motion.a
-                  key={href}
-                  href={href}
-                  onClick={(e) => handleClick(e, href)}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  className="w-full text-center py-3 text-lg font-medium text-muted hover:text-white transition-colors"
+            <div className="flex flex-col gap-2">
+              {links.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  className="rounded-2xl px-4 py-3 text-left text-sm text-ink-soft hover:bg-canvas-muted hover:text-ink"
                 >
-                  {label}
-                </motion.a>
+                  {link.label}
+                </button>
               ))}
-              <motion.a
-                href="#contact"
-                onClick={(e) => handleClick(e, '#contact')}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: links.length * 0.05 }}
-                className="mt-4 px-8 py-3 text-sm font-medium text-white bg-gradient-accent rounded-lg"
-              >
-                Get in Touch
-              </motion.a>
+              <Button className="mt-2 w-full" onClick={() => scrollTo('#contact')}>
+                Let's talk
+              </Button>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </header>
   )
 }
