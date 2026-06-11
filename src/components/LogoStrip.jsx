@@ -16,7 +16,9 @@ export default function LogoStrip() {
             <img
               src={logo.src}
               alt={logo.name}
-              className="h-6 w-auto max-w-[90px] object-contain opacity-40 grayscale transition-all duration-300 hover:opacity-80 hover:grayscale-0"
+              className={`w-auto object-contain opacity-40 grayscale transition-all duration-300 hover:opacity-80 hover:grayscale-0 ${
+                logo.small ? 'h-5 max-w-[72px]' : 'h-6 max-w-[90px]'
+              }`}
             />
           </div>
         ))}

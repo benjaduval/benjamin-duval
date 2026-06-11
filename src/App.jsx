@@ -7,7 +7,9 @@ import LogoStrip from './components/LogoStrip'
 import Empathy from './components/Empathy'
 import Services from './components/Services'
 import CaseStudies from './components/CaseStudies'
+import StackedExperience from './components/StackedExperience'
 import AboutSection from './components/AboutSection'
+import Credentials from './components/Credentials'
 import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
 
@@ -37,7 +39,9 @@ export default function App() {
         <Empathy />
         <Services />
         <CaseStudies />
+        <StackedExperience />
         <AboutSection />
+        <Credentials />
         <FinalCTA />
       </main>
       <Footer />

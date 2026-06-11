@@ -1,60 +1,102 @@
-import { education, skills } from '../data/content'
+import { motion } from 'framer-motion'
+import { GraduationCap, Award, Languages } from 'lucide-react'
+import { education, achievements, languages } from '../data/content'
 
 export default function Credentials() {
   return (
-    <section className="py-24 md:py-32">
-      <div className="section-shell grid gap-12 lg:grid-cols-2">
-        <div>
-          <p className="section-label">Education</p>
-          <h2 className="section-title mt-4">Global business foundation.</h2>
-          <div className="mt-10 space-y-4">
-            {education.map((item) => (
-              <article key={`${item.school}-${item.period}`} className="surface-card p-6">
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <h3 className="font-medium text-ink">{item.degree}</h3>
-                    <p className="mt-1 text-sm text-brand">{item.school}</p>
-                    <p className="text-xs text-ink-muted">{item.location}</p>
-                  </div>
-                  <span className="rounded-full bg-canvas-warm px-3 py-1 text-xs text-ink-muted">{item.period}</span>
-                </div>
-              </article>
+    <section id="credentials" className="border-t border-white/[0.06] bg-zinc-950/50 py-24 md:py-32">
+      <div className="section-shell">
+        <div className="max-w-2xl">
+          <p className="section-label">Formation & reconnaissance</p>
+          <h2 className="section-title mt-4">Le socle académique derrière l'exécution.</h2>
+          <p className="section-subtitle mt-6">
+            Formation internationale en business & finance, complétée par un track record mesurable en entrepreneuriat tech.
+          </p>
+        </div>
+
+        {/* Achievements grid */}
+        <div className="mt-16">
+          <div className="mb-8 flex items-center gap-3">
+            <Award className="h-5 w-5 text-brand-accent" />
+            <h3 className="font-display text-2xl text-white">Récompenses & résultats clés</h3>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {achievements.map((item, i) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: i * 0.06 }}
+                className="group surface-dark-hover p-6"
+              >
+                <p className="font-display text-3xl text-brand-glow">{item.metric}</p>
+                <p className="mt-2 text-sm font-medium text-white">{item.label}</p>
+                <p className="mt-1 text-xs leading-relaxed text-zinc-500">{item.detail}</p>
+              </motion.div>
             ))}
           </div>
         </div>
 
-        <div>
-          <p className="section-label">Capabilities</p>
-          <h2 className="section-title mt-4">Technical & leadership stack.</h2>
+        {/* Education timeline */}
+        <div className="mt-20">
+          <div className="mb-8 flex items-center gap-3">
+            <GraduationCap className="h-5 w-5 text-brand-accent" />
+            <h3 className="font-display text-2xl text-white">Diplômes & formation</h3>
+          </div>
 
-          <div className="mt-10 space-y-6">
-            <div className="surface-card p-6">
-              <h3 className="text-sm uppercase tracking-[0.18em] text-ink-muted">Technical</h3>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {skills.technical.map((s) => (
-                  <span key={s} className="rounded-full bg-canvas-warm px-3 py-1.5 text-sm text-ink-soft">{s}</span>
-                ))}
-              </div>
-            </div>
-            <div className="surface-card p-6">
-              <h3 className="text-sm uppercase tracking-[0.18em] text-ink-muted">Business</h3>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {skills.business.map((s) => (
-                  <span key={s} className="rounded-full bg-canvas-warm px-3 py-1.5 text-sm text-ink-soft">{s}</span>
-                ))}
-              </div>
-            </div>
-            <div className="surface-card p-6">
-              <h3 className="text-sm uppercase tracking-[0.18em] text-ink-muted">Languages</h3>
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                {skills.languages.map((lang) => (
-                  <div key={lang.name} className="rounded-2xl bg-canvas-warm px-4 py-3">
-                    <p className="font-medium text-ink">{lang.name}</p>
-                    <p className="text-xs text-ink-muted">{lang.level}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="relative space-y-0">
+            <div className="absolute bottom-0 left-[11px] top-0 w-px bg-white/10 md:left-1/2 md:-translate-x-px" />
+
+            {education.map((item, i) => (
+              <motion.div
+                key={`${item.school}-${item.period}`}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                className={`relative grid gap-6 pb-10 md:grid-cols-2 md:gap-12 ${i % 2 === 1 ? 'md:[&>div:first-child]:order-2' : ''}`}
+              >
+                <div className="hidden md:block" />
+                <div className="relative md:col-span-1">
+                  <span className="absolute -left-[3px] top-5 h-[18px] w-[18px] rounded-full border-4 border-zinc-950 bg-brand-accent md:left-1/2 md:-translate-x-1/2" />
+                  <article className="surface-dark ml-8 p-6 md:ml-0 md:p-7">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.16em] text-brand-accent">{item.period}</p>
+                        <h4 className="mt-2 font-display text-xl text-white">{item.degree}</h4>
+                        <p className="mt-1 text-sm text-zinc-400">{item.school}</p>
+                        <p className="text-xs text-zinc-600">{item.location}</p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm leading-relaxed text-zinc-500">{item.details}</p>
+                  </article>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Languages */}
+        <div className="mt-16">
+          <div className="mb-6 flex items-center gap-3">
+            <Languages className="h-5 w-5 text-brand-accent" />
+            <h3 className="font-display text-2xl text-white">Langues</h3>
+          </div>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+            {languages.map((lang, i) => (
+              <motion.div
+                key={lang.name}
+                initial={{ opacity: 0, scale: 0.96 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="surface-dark rounded-2xl px-5 py-4 text-center"
+              >
+                <p className="font-medium text-white">{lang.name}</p>
+                <p className="mt-1 text-xs text-zinc-500">{lang.level}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

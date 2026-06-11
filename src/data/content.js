@@ -119,6 +119,21 @@ export const caseStudies = [
     stat: '$8M+ levés · $50M market cap · $20M+ sous gestion',
     accent: '#2dd4bf',
   },
+  {
+    id: 'cortex',
+    company: 'Cortex Machina',
+    logo: '/assets/logos/cortex-machina.png',
+    image: '/assets/projects/cortex-team.png',
+    tag: 'IA · Healthcare · Fundraising',
+    challenge:
+      'Lancer une startup healthcare IA dans un secteur ultra-réglementé, avec des cycles de vente longs et des exigences GDPR/HIPAA strictes.',
+    intervention:
+      'Co-fondation, stratégie produit & go-to-market, partenariats hospitaliers, levée de fonds initiale et conformité réglementaire (CMO & Co-Founder).',
+    result:
+      'Partenariats sécurisés avec 3 hôpitaux majeurs, organisation de la levée initiale de €1M, et mise en place complète GDPR/HIPAA.',
+    stat: '3 hôpitaux partenaires · €1M levés · Conformité validée',
+    accent: '#fb7185',
+  },
 ]
 
 export const about = {
@@ -147,12 +162,165 @@ export const techPartners = [
 ]
 
 export const clientLogos = [
+  { name: 'Monetum', src: '/assets/projects/monetum.png', small: true },
   { name: 'Flowo', src: '/assets/logos/flowo.png' },
   { name: 'UpBots', src: '/assets/logos/upbots.png' },
   { name: 'SuperBots', src: '/assets/logos/superbots.png' },
   { name: 'Cortex Machina', src: '/assets/logos/cortex-machina.png' },
   { name: 'Contrast.Finance', src: '/assets/logos/contrast-finance.png' },
   { name: '4C-Trading', src: '/assets/logos/4c-trading.png' },
+]
+
+/** Autres missions — cartes empilées au scroll */
+export const otherExperiences = [
+  {
+    id: 'contrast',
+    company: 'Contrast.Finance',
+    role: 'Founder',
+    period: '2024 – Present',
+    category: 'Fintech',
+    url: 'https://contrast.finance',
+    logo: '/assets/logos/contrast-finance.png',
+    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&auto=format&fit=crop&q=80',
+    gradient: 'from-emerald-600/40 to-transparent',
+    accent: '#34d399',
+    about: 'Plateforme fintech axée sur la clarté et des décisions financières plus intelligentes.',
+    highlights: [
+      'Identité de marque et positionnement produit from scratch',
+      'UX fintech premium et stratégie go-to-market',
+      'Architecture produit orientée conversion',
+    ],
+  },
+  {
+    id: '4c-trading',
+    company: '4C-Trading',
+    role: 'Founder & CEO',
+    period: '2017 – 2021',
+    category: 'Crypto Trading',
+    url: null,
+    logo: '/assets/logos/4c-trading.png',
+    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938aa0?w=1200&auto=format&fit=crop&q=80',
+    gradient: 'from-blue-600/40 to-transparent',
+    accent: '#60a5fa',
+    about: 'Firme de trading crypto quantitative — stratégies automatisées, bootstrappée from zero.',
+    highlights: [
+      'Premier service de trading unique sur Telegram',
+      '1 200+ utilisateurs payants · $2M de revenus annuels',
+      'Construit sans capital initial',
+    ],
+  },
+  {
+    id: 'myadiction',
+    company: 'MyADiction',
+    role: 'Founder & CEO',
+    period: '2015 – 2017',
+    category: 'MarTech',
+    url: null,
+    logo: null,
+    wordmark: 'MyADiction',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80',
+    gradient: 'from-amber-600/40 to-transparent',
+    accent: '#fbbf24',
+    about: 'Plateforme MarTech — publicité digitale, attribution et analytics e-commerce.',
+    highlights: [
+      'Levées de fonds et crowdfunding',
+      'Développement technique de l\'application',
+      'Vente du service à des entreprises nationales',
+    ],
+  },
+  {
+    id: 'proximus',
+    company: 'Proximus',
+    role: 'Young Potential Program',
+    period: '2014 – 2016',
+    category: 'Telecom',
+    url: 'https://proximus.be',
+    logo: null,
+    wordmark: 'Proximus',
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&auto=format&fit=crop&q=80',
+    gradient: 'from-purple-600/40 to-transparent',
+    accent: '#a78bfa',
+    about: 'Programme Young Potential — stratégie, web marketing et RH chez le leader telecom belge.',
+    highlights: [
+      'Impact financier & technique du télétravail (call centers)',
+      'UX/UI, A/B testing, optimisation navigation',
+      'Recrutement & programme talent acquisition',
+    ],
+  },
+  {
+    id: 'kinepolis',
+    company: 'Kinepolis',
+    role: 'Brand Manager',
+    period: '2010 – 2011',
+    category: 'Entertainment',
+    url: 'https://kinepolis.com',
+    logo: null,
+    wordmark: 'Kinepolis',
+    image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200&auto=format&fit=crop&q=80',
+    gradient: 'from-red-600/40 to-transparent',
+    accent: '#f87171',
+    about: 'Créer une connexion émotionnelle entre la marque et ses clients.',
+    highlights: [
+      'Organisation d\'événements à Bruxelles',
+      'Campagnes marketing, vidéos ads & promotions',
+    ],
+  },
+]
+
+export const education = [
+  {
+    degree: 'International Business & Entrepreneurship',
+    school: 'USC Marshall School of Business',
+    location: 'Los Angeles, USA',
+    period: '2014',
+    details: 'Executive Program — Business Communication, Entrepreneurship, Global Marketing Management',
+  },
+  {
+    degree: 'Master in Commercial Engineering',
+    school: 'ICHEC Brussels Management School',
+    location: 'Brussels, Belgium',
+    period: '2012 – 2014',
+    details: 'Spécialisation Finance (Post-Graduate)',
+  },
+  {
+    degree: 'Bachelor in Commercial Engineering',
+    school: 'ICHEC Brussels Management School',
+    location: 'Brussels, Belgium',
+    period: '2009 – 2012',
+    details: 'Spécialisation Finance (Post-Graduate)',
+  },
+  {
+    degree: 'Erasmus — Business Administration',
+    school: 'Universidad Politécnica de Valencia',
+    location: 'Valencia, Spain',
+    period: '2011',
+    details: 'Comptabilité, Management & Marketing',
+  },
+  {
+    degree: 'Summer Program — Marketing',
+    school: 'Clemson University',
+    location: 'South Carolina, USA',
+    period: '2010',
+    details: 'Marketing & Business Management (3 mois)',
+  },
+]
+
+export const achievements = [
+  { metric: '$12M+', label: 'Capital levé', detail: 'ICO, IEO, private sales & fundraising' },
+  { metric: '$150M', label: 'Actifs gérés', detail: 'Trading platforms & DeFi protocols' },
+  { metric: '10+', label: 'Entreprises bâties', detail: 'Fintech, Web3, AI & MarTech' },
+  { metric: '$50M', label: 'Market cap peak', detail: 'Valorisation au plus haut' },
+  { metric: '20K+', label: 'Communauté', detail: 'Membres actifs cumulés' },
+  { metric: '25+', label: 'Équipe managée', detail: '8+ pays' },
+  { metric: 'ICO/IEO', label: 'Listings réussis', detail: 'FTX, KuCoin, DEXs' },
+  { metric: '8+', label: 'Apps IA en prod', detail: 'Orchestration custom déployée' },
+]
+
+export const languages = [
+  { name: 'Français', level: 'Natif' },
+  { name: 'English', level: 'Courant' },
+  { name: 'Nederlands', level: 'Professionnel' },
+  { name: 'Español', level: 'Conversationnel' },
 ]
 
 // Legacy for tests

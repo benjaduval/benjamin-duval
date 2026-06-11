@@ -7,6 +7,8 @@ import { site } from '../data/content'
 const links = [
   { label: 'Services', href: '#services' },
   { label: 'Résultats', href: '#results' },
+  { label: 'Missions', href: '#ventures' },
+  { label: 'Formation', href: '#credentials' },
   { label: 'À propos', href: '#about' },
 ]
 
