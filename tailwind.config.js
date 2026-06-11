@@ -65,7 +65,9 @@ export default {
       },
       backgroundImage: {
         'mesh-light':
-          'radial-gradient(at 40% 20%, rgba(196,169,98,0.12) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(45,90,135,0.08) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(196,169,98,0.06) 0px, transparent 50%)',
+          'radial-gradient(at 27% 37%, rgba(196,169,98,0.14) 0px, transparent 50%), radial-gradient(at 97% 21%, rgba(45,90,135,0.10) 0px, transparent 50%), radial-gradient(at 52% 99%, rgba(139,92,246,0.08) 0px, transparent 50%), radial-gradient(at 10% 29%, rgba(196,169,98,0.08) 0px, transparent 50%)',
+        'mesh-dark':
+          'radial-gradient(at 40% 20%, rgba(196,169,98,0.15) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(99,102,241,0.12) 0px, transparent 50%)',
       },
     },
   },

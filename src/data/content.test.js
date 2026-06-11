@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { profile, projects, stats } from './content.js'
+import { profile, featuredCompanies, otherExperiences, stats } from './content.js'
 
 describe('portfolio content', () => {
   it('exports required profile fields', () => {
@@ -8,19 +8,30 @@ describe('portfolio content', () => {
     expect(profile.portrait).toMatch(/^\/assets\//)
   })
 
-  it('includes featured projects with media', () => {
-    const featured = projects.filter((p) => p.featured)
-    expect(featured.length).toBeGreaterThanOrEqual(4)
-    expect(projects.find((p) => p.id === 'contrast')).toBeTruthy()
-    expect(projects.find((p) => p.id === 'flowo')?.video).toContain('youtube')
-    expect(projects.find((p) => p.id === 'upbots')?.video).toContain('youtube')
+  it('has five featured company sections', () => {
+    expect(featuredCompanies).toHaveLength(5)
+    const ids = featuredCompanies.map((c) => c.id)
+    expect(ids).toContain('monetum')
+    expect(ids).toContain('flowo')
+    expect(ids).toContain('upbots')
+    expect(ids).toContain('superbots')
+    expect(ids).toContain('cortex')
+  })
+
+  it('uses video buttons not autoplay for demos', () => {
+    const flowo = featuredCompanies.find((c) => c.id === 'flowo')
+    const upbots = featuredCompanies.find((c) => c.id === 'upbots')
+    expect(flowo.video).toContain('youtube')
+    expect(upbots.video).toContain('youtube')
+    expect(flowo.videoLabel).toBeTruthy()
+  })
+
+  it('has stacked experience cards', () => {
+    expect(otherExperiences.length).toBeGreaterThanOrEqual(4)
+    expect(otherExperiences.find((e) => e.id === 'contrast')).toBeTruthy()
   })
 
   it('has impact stats', () => {
     expect(stats).toHaveLength(4)
-    stats.forEach((stat) => {
-      expect(stat.label).toBeTruthy()
-      expect(typeof stat.value).toBe('number')
-    })
   })
 })

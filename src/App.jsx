@@ -4,10 +4,10 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import LogoMarquee from './components/LogoMarquee'
 import About from './components/About'
-import SelectedWork from './components/SelectedWork'
+import CompanyShowcase from './components/CompanyShowcase'
+import StackedExperience from './components/StackedExperience'
 import Impact from './components/Impact'
 import Expertise from './components/Expertise'
-import Journey from './components/Journey'
 import Credentials from './components/Credentials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -33,20 +33,24 @@ export default function App() {
   }, [])
 
   return (
-    <div className="relative min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <LogoMarquee />
-        <About />
-        <SelectedWork />
-        <Impact />
-        <Expertise />
-        <Journey />
-        <Credentials />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="relative min-h-screen bg-canvas">
+      <div className="pointer-events-none fixed inset-0 bg-mesh-light opacity-80" />
+      <div className="noise-overlay pointer-events-none fixed inset-0" />
+      <div className="relative">
+        <Navbar />
+        <main>
+          <Hero />
+          <LogoMarquee />
+          <About />
+          <CompanyShowcase />
+          <StackedExperience />
+          <Impact />
+          <Expertise />
+          <Credentials />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }

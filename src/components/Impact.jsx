@@ -5,7 +5,8 @@ import AnimatedCounter from './AnimatedCounter'
 
 export default function Impact() {
   return (
-    <section className="bg-ink py-24 text-white md:py-32">
+    <section className="relative overflow-hidden bg-ink py-24 text-white md:py-32">
+      <div className="absolute inset-0 bg-mesh-dark opacity-60" />
       <div className="section-shell">
         <div className="max-w-3xl">
           <p className="section-label text-brand-glow">Impact at a glance</p>
