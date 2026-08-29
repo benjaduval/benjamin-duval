@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { cn } from '../lib/utils'
-import { site } from '../data/content'
+import { labels, site } from '../data/content'
 
-const links = [
+const sectionLinks = [
   { label: 'Services', href: '#services' },
   { label: 'Results', href: '#results' },
   { label: 'Ventures', href: '#ventures' },
+  { label: labels.demos, to: '/demos' },
   { label: 'Credentials', href: '#credentials' },
   { label: 'About', href: '#about' },
 ]
@@ -15,6 +17,9 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
+  const onDemos = location.pathname.startsWith('/demos')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -22,8 +27,21 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const scrollTo = (href) => {
+  const goHome = () => {
     setOpen(false)
+    if (location.pathname === '/') {
+      document.querySelector('#hero')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    }
+    navigate('/')
+  }
+
+  const goSection = (href) => {
+    setOpen(false)
+    if (location.pathname !== '/') {
+      navigate(`/${href}`)
+      return
+    }
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
@@ -38,22 +56,40 @@ export default function Navbar() {
               : 'border-transparent bg-zinc-950/30 backdrop-blur-md'
           )}
         >
-          <button onClick={() => scrollTo('#hero')} className="font-display text-lg text-white">
+          <button onClick={goHome} className="font-display text-lg text-white">
             Benjamin <span className="text-brand-accent">Duval</span>
           </button>
 
-          <div className="hidden items-center gap-8 md:flex">
-            {links.map((l) => (
-              <button key={l.href} onClick={() => scrollTo(l.href)} className="text-sm text-zinc-400 transition hover:text-white">
-                {l.label}
-              </button>
-            ))}
+          <div className="hidden items-center gap-5 lg:flex">
+            {sectionLinks.map((l) =>
+              l.to ? (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    'text-sm transition hover:text-white',
+                    onDemos ? 'text-white' : 'text-zinc-400'
+                  )}
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <button
+                  key={l.href}
+                  onClick={() => goSection(l.href)}
+                  className="text-sm text-zinc-400 transition hover:text-white"
+                >
+                  {l.label}
+                </button>
+              )
+            )}
             <a href={site.calendlyUrl} target="_blank" rel="noopener noreferrer" className="btn-primary !py-2.5 !px-5 !text-xs">
               Strategy call
             </a>
           </div>
 
-          <button className="text-white md:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
+          <button className="text-white lg:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </nav>
@@ -65,13 +101,28 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="mx-6 mt-2 rounded-2xl border border-white/10 bg-zinc-950/95 p-4 backdrop-blur-xl md:hidden"
+            className="mx-6 mt-2 rounded-2xl border border-white/10 bg-zinc-950/95 p-4 backdrop-blur-xl lg:hidden"
           >
-            {links.map((l) => (
-              <button key={l.href} onClick={() => scrollTo(l.href)} className="block w-full rounded-xl px-4 py-3 text-left text-sm text-zinc-300 hover:bg-white/5">
-                {l.label}
-              </button>
-            ))}
+            {sectionLinks.map((l) =>
+              l.to ? (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className="block w-full rounded-xl px-4 py-3 text-left text-sm text-zinc-300 hover:bg-white/5"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <button
+                  key={l.href}
+                  onClick={() => goSection(l.href)}
+                  className="block w-full rounded-xl px-4 py-3 text-left text-sm text-zinc-300 hover:bg-white/5"
+                >
+                  {l.label}
+                </button>
+              )
+            )}
             <a href={site.calendlyUrl} target="_blank" rel="noopener noreferrer" className="btn-primary mt-3 block w-full text-center">
               Strategy call
             </a>

@@ -376,6 +376,7 @@ export const labels = {
   aboutLabel: 'About',
   logoStrip: 'Technologies mastered & companies supported',
   footerTagline: 'Technical execution partner',
+  demos: 'Demos',
   orEmail: 'Or email me directly:',
 }
 

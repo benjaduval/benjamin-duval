@@ -40,6 +40,7 @@ describe('freelance site content', () => {
   it('has English UI labels', () => {
     expect(labels.watchDemo).toBe('Watch the demo')
     expect(labels.product).toBe('The product')
+    expect(labels.demos).toBe('Demos')
   })
 
   it('has social proof stats', () => {
